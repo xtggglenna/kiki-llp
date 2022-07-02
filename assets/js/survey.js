@@ -9,7 +9,7 @@ contractqn = {"Did the other contracting party abscond before performing its obl
 criminalqn = {
 "Were there two or more assailants involved in the plan?" : "Conspiracy/Abetment",
 "Was there death involved?" : "Murder",
-"Did you cause the victim's injury (but no death was involved)?": "Attempted Murder/Voluntarily Causing hurt/grievous hurt",
+"Did you cause the victim's injury (but no death was involved)?": "Attempted Murder/Voluntarily Causing Hurt/Grievous hurt",
 "Were there any forms of indecency? (eg. touching of others without permission, stalking, harassment, etc.)" : "Battery/Assault/Harassment",
 "Was there misuse of company funds or forging of documents involved?" : "Cheating"
 }
@@ -104,20 +104,20 @@ $('#formsub').click(function() {
           }
   })
       console.log(customersurvey) 
-    })
+    
   for(term in customersurvey){
     if(customersurvey[term] == 'YES'){
       newcat = term.split('/')
+      
       for (e of newcat){
         categories.push(e)
       }
       // categories.push(term)
-    console.log(categories)
-
       
     }
+    console.log(categories)
   }
-  
+})
 }
 else{
     surveyhtml.innerHTML += `<div class="carousel-item ">
@@ -146,7 +146,6 @@ else{
         for(termsection in termstranslate){
           if(termstranslate[termsection].some(r=> desctext.includes(r))){
             categories = termsection.split('/')
-            console.
           }
         }
         // console.log(categories)
