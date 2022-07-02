@@ -48,14 +48,21 @@ COMMIT;
 
 DROP TABLE IF EXISTS `cases`;
 CREATE TABLE IF NOT EXISTS `cases` (
-  `caseno` varchar(25) NOT NULL,
+  `caseno` int NOT NULL AUTO_INCREMENT,
   `requestor` varchar(25) NOT NULL,
   `assignee` varchar(25) NOT NULL,
   `casestatus` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `details` json NOT NULL,
   `priority` varchar(25) NOT NULL,
-  `documents` blob,
   `updatedby` varchar(25) NOT NULL,
-  `updatedat` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`caseno`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cases`
+--
+
+INSERT INTO `cases` (`caseno`, `requestor`, `assignee`, `casestatus`, `details`, `priority`, `updatedby`, `updatedat`) VALUES
+(1, 'glenna', 'jiemin', 'pending', '{\"category\": [\"Robbery\", \"Assault\"], \"description\": \"I, (client), owner of X shop, am filing a complaint for theft against (accused). On 20 June 2022, the accused arrived at X shop at around 2pm. The accused requested to view certain products in the shop and was attended to by (employee victim). At around 2.20pm, while making payment at the counter, the accused took out a folding knife and threatened (employee victim) to hand over all the cash in the cash register. Refusing the demand of the accused, (employee victim) was slashed with the folding knife, resulting in a deep cut on his forehead. The victim was also pushed into the storeroom and restrained with rope and tape. This caused the victim to suffer multiple bruises and contusions. While (employee victim) was restrained, (accused) emptied the cash register and fled the scene. A total of $2,500 was stolen, and only $120 was recovered from the accused upon arrest five days after the robbery.\"}', 'high', 'glenna', '2019-01-23 22:00:00');
 COMMIT;
+

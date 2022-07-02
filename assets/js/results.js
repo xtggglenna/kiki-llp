@@ -21,6 +21,7 @@ $('#formsub').click(function() {
         customerresults.push(field.value)
     })
         console.log(customerresults) 
+        window.location.href = "cases.html"
 
     
 var today = new Date(); 
@@ -29,28 +30,25 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 var dateTime = date+' '+time;
 
 // username = sessionStorage.getItem("username")
-
-// console.log(sessionStorage.getItem('results'))
-
-// url = 
+// description = sessionStorage.getItem('description')
+// username = sessionStorage.getItem('username')
+// console.log(sessionStorage.getItem('description'))
+// category = {'categories':customerresults, 'description': description}
+// url = 'client/insertcase.php'
 // axios.get(url,
 //   {params:{
-//       username: username,
-//       // priority: ,
-//       category: customersurvey,
-//       // assignee: , 
+//       requestor: username,
+//       priority: 'high',
+//       details: category,
+//       assignee: 'jiemin', 
 //       updatedby: username,
 //       updatedat: dateTime
 //   }}).then(response=>{
 //       console.log(response.data)
-//       window.location.href = "results.html";
+//     // window.location.href = "cases.html"
 
 //   }).catch(error=>{
 //       alert(error)
 //   })
-
-        //   window.location.href = "cases.html"\
-
-
 
   })

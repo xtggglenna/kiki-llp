@@ -39,7 +39,7 @@ function clientlogin(){
         console.log(response.data)
         if(response.data.message == 'success'){
             sessionStorage.setItem("username", username)
-            window.location.href = "dashboard.html"
+            window.location.href = "cases.html"
         }
         else{
             printErrors(response.data.message, 'errorscli')
@@ -64,7 +64,7 @@ function lawyerlogin(){
         console.log(response.data)
         if(response.data.message == 'success'){
             sessionStorage.setItem("username", username)
-            window.location.href = "dashboard.html"
+            window.location.href = "cases.html"
         }
         else{
             printErrors(response.data.message, 'errorslaw')

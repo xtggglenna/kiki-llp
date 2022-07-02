@@ -17,6 +17,7 @@ criminalqn = {
 termstranslate = {'Robbery/Assault/Murder' : ['theft', 'stolen', 'threatened', 'slashed', 'pushed', 'restrained', 'cut', 'bruises'], 
 'Missrepresentation/Mistake' : ['lies', 'claim', 'suggest', 'mistaken', 'cheated', 'imposter', 'fake', 'forged', 'assumed', 'false']
 }
+text = ''
 section = sessionStorage.getItem('category')
 categories = []
 surveyhtml = document.getElementById('surveyqns')
@@ -68,6 +69,7 @@ if(section == "Contract"){
     }
     console.log(categories)
     sessionStorage.setItem("results", categories)
+    sessionStorage.setItem("description", text)
     window.location.href = "results.html"
     })
 }
@@ -125,6 +127,7 @@ $('#formsub').click(function() {
     }
     console.log(categories)
     sessionStorage.setItem("results", categories)
+    sessionStorage.setItem("description", text)
     window.location.href = "results.html"
 
   }
@@ -161,6 +164,7 @@ else{
         }
         console.log(categories)
         sessionStorage.setItem("results", categories)
+        sessionStorage.setItem("description", text)
     window.location.href = "results.html"
 
       })
