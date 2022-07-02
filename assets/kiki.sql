@@ -45,3 +45,17 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+DROP TABLE IF EXISTS `cases`;
+CREATE TABLE IF NOT EXISTS `cases` (
+  `caseno` varchar(25) NOT NULL,
+  `requestor` varchar(25) NOT NULL,
+  `assignee` varchar(25) NOT NULL,
+  `casestatus` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `details` json NOT NULL,
+  `priority` varchar(25) NOT NULL,
+  `documents` blob,
+  `updatedby` varchar(25) NOT NULL,
+  `updatedat` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+COMMIT;
