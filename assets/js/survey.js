@@ -13,6 +13,10 @@ criminalqn = {
 "Were there any forms of indecency? (eg. touching of others without permission, stalking, harassment, etc.)" : "Battery/Assault/Harassment",
 "Was there misuse of company funds or forging of documents involved?" : "Cheating"
 }
+
+termstranslate = {'Robbery/Assault/Murder' : ['theft', 'stolen', 'threatened', 'slashed', 'pushed', 'restrained', 'cut', 'bruises'], 
+'Missrepresentation/Mistake' : ['lies', 'claim', 'suggest', 'mistaken', 'cheated', 'imposter', 'fake', 'forged', 'assumed', 'false']
+}
 section = sessionStorage.getItem('category')
 categories = []
 surveyhtml = document.getElementById('surveyqns')
@@ -41,7 +45,7 @@ if(section == "Contract"){
       <div class="card-body">
         <h5 class="card-title pb-0">Submit to find out the category of your legal issue</h5>
       <br>
-        <input type="button" id="formsub" class="btn btn-primary" value="Submit">
+      <button type="button" id="formsub" href="#" class="btn btn-primary" >Submit</button>
       </div>
   </div>`
   $('#formsub').click(function() {
@@ -56,12 +60,16 @@ if(section == "Contract"){
             }
     })
         console.log(customersurvey) 
-      })
+      
     for(term in customersurvey){
       if(customersurvey[term] == 'YES'){
         categories.push(term)
       }
     }
+    console.log(categories)
+    sessionStorage.setItem("results", categories)
+    window.location.href = "results.html"
+    })
 }
 
 
@@ -89,7 +97,7 @@ surveyhtml.innerHTML += `</form>`
     <div class="card-body">
       <h5 class="card-title pb-0">Submit to find out the category of your legal issue</h5>
     <br>
-      <input type="button" id="formsub" class="btn btn-primary" value="Submit">
+    <button type="button" id="formsub" href="#" class="btn btn-primary" >Submit</button>
     </div>
 </div>`
 $('#formsub').click(function() {
@@ -116,6 +124,9 @@ $('#formsub').click(function() {
       
     }
     console.log(categories)
+    sessionStorage.setItem("results", categories)
+    window.location.href = "results.html"
+
   }
 })
 }
@@ -148,37 +159,12 @@ else{
             categories = termsection.split('/')
           }
         }
-        // console.log(categories)
+        console.log(categories)
+        sessionStorage.setItem("results", categories)
+    window.location.href = "results.html"
+
       })
 }
 
 
 
-termstranslate = {'Robbery/Assault/Murder' : ['theft', 'stolen', 'threatened', 'slashed', 'pushed', 'restrained', 'cut', 'bruises'], 
-'Missrepresentation/Mistake' : ['lies', 'claim', 'suggest', 'mistaken', 'cheated', 'imposter', 'fake', 'forged', 'assumed', 'false']
-}
-
-var today = new Date(); 
-var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = date+' '+time;
-
-username = sessionStorage.getItem("username")
-// username = sessionStorage.setItem("categories")
-
-// url = 
-// axios.get(url,
-//   {params:{
-//       username: username,
-//       // priority: ,
-//       category: customersurvey,
-//       // assignee: , 
-//       updatedby: username,
-//       updatedat: dateTime
-//   }}).then(response=>{
-//       console.log(response.data)
-//       window.location.href = "results.html";
-
-//   }).catch(error=>{
-//       alert(error)
-//   })
